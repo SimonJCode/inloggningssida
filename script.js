@@ -5,6 +5,7 @@ const loginBtn = document.getElementById("login-button");
 const inputFieldOne = document.getElementById("input-one");
 const inputFieldTwo = document.getElementById("input-two");
 const titleText = document.getElementById("head-title");
+const mainDiv = document.getElementById("main-container");
 const loginName = "test";
 const loginPassword = "1234";
 
@@ -30,11 +31,11 @@ loginBtn.onclick = function(){
 
             const paraWrong = document.createElement("p");
             paraWrong.innerHTML = "Fel användarnamn eller lösenord.";
-            document.body.appendChild(paraWrong);
+            mainDiv.appendChild(paraWrong);
 
             const tryAgainBtn = document.createElement("button");
             tryAgainBtn.innerHTML = "Försök igen";
-            document.body.appendChild(tryAgainBtn);
+            mainDiv.appendChild(tryAgainBtn);
 
             tryAgainBtn.onclick = function(){
                 location.reload();
@@ -62,7 +63,7 @@ function verifyLogin(){
 
             const logoutBtn = document.createElement("button");
             logoutBtn.innerHTML = "Log out";
-            document.body.appendChild(logoutBtn);
+            mainDiv.appendChild(logoutBtn);
 
             //If logout button is clicked, clear localstorage and reload the page.
             logoutBtn.onclick = function(){
