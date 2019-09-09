@@ -20,8 +20,9 @@ loginBtn.onclick = function(){
         //If username and password is correct, call the logIn function.
         //If its wrong, hide the login elements, give a message to the user what went wrong and create a button to try again.
         if(inputName === loginName && inputPass === loginPassword){
-            logIn();
-            console.log("welcome in");
+            //logIn();
+            localStorage.setItem("loggedin", true);
+            location.reload();
         }
         else{
             loginBtn.style.display = "none";
@@ -40,15 +41,7 @@ loginBtn.onclick = function(){
             tryAgainBtn.onclick = function(){
                 location.reload();
             }
-
-            console.log("Incorrect username or password");
         }
-};
-
-//Give the key "loggedin" a value of "true", and reload the page. 
-function logIn(){
-    localStorage.setItem("loggedin", true);
-    location.reload();
 };
 
 //Check localstorage to see if the user is logged in.
@@ -75,12 +68,10 @@ function verifyLogin(){
             logoutBtn.onclick = function(){
                 localStorage.clear();
                 location.reload();
-            };
-
-            console.log("local storage works");
+            };    
         }
         else{
-            console.log("nothing in localstorage");
+            console.log("Nothing in local storage");
         }
 };
 
