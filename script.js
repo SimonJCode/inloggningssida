@@ -65,6 +65,12 @@ function verifyLogin(){
             logoutBtn.innerHTML = "Log out";
             mainDiv.appendChild(logoutBtn);
 
+            const gifImage = document.createElement("img");
+            mainDiv.appendChild(gifImage);
+            gifImage.id = "giphy";
+            document.getElementById("giphy").src = "https://media3.giphy.com/media/Kf0OnhCss3AO0Kema1/giphy.gif?cid=790b7611ea01e7743ca62dda2c8cc943d89e1087527fca27&rid=giphy.gif";
+            
+
             //If logout button is clicked, clear localstorage and reload the page.
             logoutBtn.onclick = function(){
                 localStorage.clear();
